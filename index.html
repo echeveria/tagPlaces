@@ -9,12 +9,14 @@
 
     <script>
         $('document').ready( function(){
-            navigator.geolocation.getCurrentPosition(function(position) {
-                console.log('Latitude: ' + position.coords.latitude  + 'Longitude: ' + position.coords.longitude);
-            }, function(error) {
-                console.error('GPS error occurred');
+            $('.current_location').click(function(){
+                navigator.geolocation.getCurrentPosition(function(position) {
+                   $('#text-4').attr('value', position.coords.latitude+','+ position.coords.longitude);
+                    }, function(error) {
+                    $('#text-4').attr('value','GPS error occurred');
+                    });
+                });
             });
-        });
 
     </script>
 </head>
@@ -51,7 +53,7 @@
         <form>
             <label for="text-4">Location name:</label>
             <input type="text" data-mini="true" name="text-4" id="text-4" value="">
-            <input type="button" data-theme="b" value="Get current location">
+            <input type="button" data-theme="b" class="current_location" value="Get current location">
             <a  href="page-transitions-dialog.html" data-role="button" data-rel="dialog" data-transition="fade"  data-theme="b">Get location in map </a>
             <label for="textarea-4">Notify:</label>
             <textarea data-mini="true" cols="40" rows="8" name="textarea-4" id="textarea-4"></textarea>
