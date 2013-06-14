@@ -1,1 +1,1 @@
-gpl3
+ License: GNU GPL v3 <http://www.gnu.org>
