@@ -79,7 +79,7 @@ TPDB.prototype.getCircleBoundingBox = function (pos, radius){
 	latR = (latR / Math.PI) * 180;;
   
 	box.maxLat = pos.lat + latR;
-  box.minLat = pos.lat - latR;
+  	box.minLat = pos.lat - latR;
 	
 	var latRad = ((pos.lat / 180.0) * Math.PI)
 	// get longitude R in radians;
@@ -87,8 +87,8 @@ TPDB.prototype.getCircleBoundingBox = function (pos, radius){
 	// convert to degrees
 	lonR = (lonR / Math.PI) * 180;;
 	
-  box.maxLon = pos.lon + lonR;
-  box.minLon = pos.lon - lonR;
+  	box.maxLon = pos.lon + lonR;
+  	box.minLon = pos.lon - lonR;
 	return box;
 }
 
